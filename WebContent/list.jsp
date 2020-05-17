@@ -9,6 +9,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<title>所有列表的页面</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css"
@@ -17,6 +18,7 @@
 <script type="text/javascript" src="<%=path%>/js/jquery.form.js"></script>
 </head>
 <body>
+	<a href="add.jsp">添加</a>
 	<table>
 		<thead>
 			<tr>
@@ -25,18 +27,18 @@
 				<th>名称</th>
 				<th>单价</th>
 				<th>库存</th>
-				<th>个数</th>
 			</tr>
 		</thead>
 		<tbody>
 		<c:forEach items="${list }" var="li">
 				<tr>
 					<td>${li.id }</td>
-					<td>${li.created }</td>
+					<td>
+						<fmt:formatDate  pattern="yyyy-MM-dd HH:mm:ss" value="${li.created }"/>
+					</td>
 					<td>${li.course_name }</td>
 					<td>${li.unit_price }</td>
 					<td>${li.stock_num }</td>
-					<td>${li.count }</td>
 				</tr>
 		</c:forEach>
 		</tbody>

@@ -14,5 +14,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from tb_user where email=#{email} and
 		password=#{password}
 	</select>
+	<!-- 添加  -->
+	<insert id="addCourse" parameterType="com.nfs.sm.bean.Course">
+		insert into tb_course(course_name,created,unit_price,stock_num)
+		values(#{course_name},#{created},#{unit_price},#{stock_num})
+	</insert>
 </mapper>
 

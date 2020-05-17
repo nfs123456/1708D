@@ -1,5 +1,6 @@
 package com.nfs.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,17 +26,25 @@ public class CourseController {
 	private CourseService courseService;
 
 	
+//	登录
 	@PostMapping("login.do")
 	public User loginUser(User user) {
 		User login = courseService.login(user);
 		return login;
 	}
-	
+//	查看所有的
 	@GetMapping("allCourse.do")
 	private ModelAndView allCourse(Model model) {
 		ModelAndView modelAndView = new ModelAndView("list");
 		List<Course> list = courseService.allCourse();
 		modelAndView.addObject("list", list);
 		return modelAndView;
+	}
+//	添加
+	@PostMapping("addCourse.do")
+	private Boolean addCourse(Course course) {
+		course.setCreated(new Date());
+		Boolean addCourse = courseService.addCourse(course);
+		return addCourse;
 	}
 }

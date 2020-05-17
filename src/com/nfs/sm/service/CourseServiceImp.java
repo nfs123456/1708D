@@ -32,4 +32,10 @@ public class CourseServiceImp implements CourseService {
 		return courseMapper.login(user);
 	}
 
+	@Override
+	public Boolean addCourse(Course course) {
+		// TODO Auto-generated method stub
+		return courseMapper.addCourse(course);
+	}
+
 }

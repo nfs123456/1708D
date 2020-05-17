@@ -15,4 +15,6 @@ public interface CourseMapper {
 	List<Course> allCourse();
 
 	User login(User user);
+
+	Boolean addCourse(Course course);
 }

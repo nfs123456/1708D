@@ -15,4 +15,6 @@ public interface CourseService {
 	List<Course> allCourse();
 
 	User login(User user);
+
+	Boolean addCourse(Course course);
 }
